@@ -20,6 +20,7 @@
 }
 
 .card__image {
+  width: 100%;
   border-radius: 3px 3px 0 0;
 }
 
@@ -40,6 +41,11 @@
 .card-data__price {
   margin: 20px 0 20px;
   color: #9e9e9e;
+}
+
+.card-data__chart {
+  width: 100%;
+  height: 150px;
 }
 
 .card-data__coverage {
