@@ -1,0 +1,59 @@
+.card {
+  display: grid;
+
+  border-radius: 5px;
+  background-color: white;
+}
+
+.card__count {
+  position: absolute;
+
+  background-color: rgb(187 206 224);
+  color: white;
+
+  height: 22px;
+  width: 21px;
+
+  text-align: center;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.card__image {
+  border-radius: 3px 3px 0 0;
+}
+
+.card-data {
+  display: grid;
+  padding: 10px;
+}
+
+.card-data__code {
+  font-size: 13px;
+  color: #9e9e9e;
+}
+
+.card-data__name {
+  font-weight: 600;
+}
+
+.card-data__price {
+  margin: 20px 0 20px;
+  color: #9e9e9e;
+}
+
+.card-data__coverage {
+  text-align: right;
+  color: #9e9e9e87;
+  font-size: 13px;
+}
+
+.card-data__coverage-low {
+  text-align: right;
+  color: red;
+}
+
+.card-data__coverage-good {
+  text-align: right;
+  color: green;
+}
