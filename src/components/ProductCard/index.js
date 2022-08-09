@@ -37,7 +37,9 @@ const ProductCard = ({
       <section className="card-data">
         <span className="card-data__code">{code}</span>
         <span className="card-data__name">{name}</span>
-        <span className="card-data__price">{price} &euro;</span>
+        <span className="card-data__price">
+          {parseFloat(price).toFixed(2)} &euro;
+        </span>
         <div className="card-data__chart">
           <BarChart
             chartData={{
