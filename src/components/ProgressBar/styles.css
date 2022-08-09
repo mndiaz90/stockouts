@@ -1,0 +1,22 @@
+.progress-bar {
+  position: relative;
+  margin: 10px;
+}
+
+.progress-bar__div {
+  height: 10px;
+  position: absolute;
+  border-radius: 50px;
+}
+
+.progress-bar__whcoverage {
+  padding: 5px;
+  color: #9e9e9e;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.progress-bar__div-empty {
+  width: 100%;
+  background-color: #e0e0de;
+}

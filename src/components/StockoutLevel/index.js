@@ -1,3 +1,4 @@
+import ProgressBar from "../ProgressBar";
 import "./styles.css";
 
 const WH_COVERAGE = 50;
@@ -10,6 +11,7 @@ const COVERAGE_TYPE = {
 const StockoutLevel = ({ wh_coverage }) => {
   return (
     <>
+      <ProgressBar completed={wh_coverage} />
       {wh_coverage < WH_COVERAGE ? (
         <span className="coverage-low">{COVERAGE_TYPE.VeryLow}</span>
       ) : (
