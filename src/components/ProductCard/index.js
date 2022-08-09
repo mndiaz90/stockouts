@@ -2,15 +2,38 @@ import BarChart from "../BarChart";
 import StockoutLevel from "../StockoutLevel";
 import "./styles.css";
 
-const ProductCard = ({ code, name, price, wh_coverage, size_stock, count }) => {
+const ProductCard = ({
+  code,
+  count,
+  name,
+  price,
+  removeProduct,
+  size_stock,
+  wh_coverage,
+}) => {
+  const onClickComplete = (code) => {
+    if (
+      window.confirm("Are you sure you want to mark this product as complete?")
+    )
+      removeProduct(code);
+  };
+
   return (
     <li className="card">
-      <span className="card__count">{count}</span>
-      <img
-        alt={name}
-        className="card__image"
-        src={require(`../../assets/images/${code}.jpg`)}
-      />
+      <section className="card-image">
+        <span className="card-image__count">{count}</span>
+        <img
+          alt={name}
+          className="card-image__img"
+          src={require(`../../assets/images/${code}.jpg`)}
+        />
+        <button
+          className="card-image__btn"
+          onClick={() => onClickComplete(code)}
+        >
+          Mark Complete
+        </button>
+      </section>
       <section className="card-data">
         <span className="card-data__code">{code}</span>
         <span className="card-data__name">{name}</span>

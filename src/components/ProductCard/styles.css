@@ -5,7 +5,11 @@
   background-color: white;
 }
 
-.card__count {
+.card-image {
+  position: relative;
+}
+
+.card-image__count {
   position: absolute;
 
   background-color: rgb(187 206 224);
@@ -19,14 +23,45 @@
   border-radius: 3px;
 }
 
-.card__image {
+.card-image__img {
   width: 100%;
   border-radius: 3px 3px 0 0;
 }
 
+.card-image__btn {
+  position: absolute;
+  text-align: center;
+
+  color: white;
+  background-color: #00000070;
+
+  height: 50px;
+  width: 150px;
+
+  font-size: 17px;
+  border: 2px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+
+  transition: 0.5s ease;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.card-image:hover img {
+  opacity: 0.3;
+}
+
+.card-image:hover button {
+  opacity: 1;
+}
+
 .card-data {
   display: grid;
-  padding: 10px;
+  padding: 25px;
 }
 
 .card-data__code {
