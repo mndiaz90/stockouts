@@ -1,4 +1,5 @@
 import BarChart from "../BarChart";
+import StockoutLevel from "../StockoutLevel";
 import "./styles.css";
 
 const ProductCard = ({ code, name, price, wh_coverage, size_stock, count }) => {
@@ -27,13 +28,7 @@ const ProductCard = ({ code, name, price, wh_coverage, size_stock, count }) => {
             }}
           />
         </div>
-        <span>{wh_coverage}</span>
-        {wh_coverage < 0.5 ? (
-          <span className="card-data__coverage-low">Very Low</span>
-        ) : (
-          <span className="card-data__coverage-good">Good</span>
-        )}
-        <span className="card-data__coverage">WH COVERAGE</span>
+        <StockoutLevel wh_coverage={wh_coverage * 100} />
       </section>
     </li>
   );
