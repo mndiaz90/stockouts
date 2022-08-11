@@ -1,5 +1,5 @@
 import { Bar } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+import { Chart } from "chart.js/auto";
 
 const defaultOptions = {
   maintainAspectRatio: false,
@@ -10,8 +10,16 @@ const defaultOptions = {
   },
   scales: {
     y: {
+      grid: {
+        drawBorder: false,
+      },
       ticks: {
         stepSize: 2,
+      },
+    },
+    x: {
+      grid: {
+        display: false,
       },
     },
   },
