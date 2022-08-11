@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-const ProgressBar = ({ bgcolor = "green", completed }) => {
+const ProgressBar = ({ bgcolor = "#8bc34a", completed }) => {
   const progressBarFilled = {
     width: `${completed}%`,
     backgroundColor: bgcolor,

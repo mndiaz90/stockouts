@@ -1,15 +1,15 @@
-.coverage {
+.wh-coverage__span {
   text-align: right;
   color: #9e9e9e87;
   font-size: 13px;
 }
 
-.coverage-low {
+.coverage-low__span {
   text-align: right;
   color: red;
 }
 
-.coverage-good {
+.coverage-good__span {
   text-align: right;
-  color: green;
+  color: #8bc34a;
 }

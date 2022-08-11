@@ -4,7 +4,7 @@
 
 .progress-bar__whcoverage {
   margin-right: 2px;
-  color: #9e9e9e;
+  color: var(--light-gray);
   font-weight: 600;
   font-size: 25px;
 }
@@ -12,7 +12,7 @@
 .progress-bar__percent {
   position: relative;
   top: -7px;
-  color: #9e9e9e;
+  color: var(--light-gray);
   font-weight: bold;
 }
 

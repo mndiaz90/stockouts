@@ -16,11 +16,11 @@ const StockoutLevel = ({ wh_coverage }) => {
       <ProgressBar completed={wh_coverage} />
       <Separator />
       {wh_coverage < WH_COVERAGE ? (
-        <span className="coverage-low">{COVERAGE_TYPE.VeryLow}</span>
+        <span className="coverage-low__span">{COVERAGE_TYPE.VeryLow}</span>
       ) : (
-        <span className="coverage-good">{COVERAGE_TYPE.Good}</span>
+        <span className="coverage-good__span">{COVERAGE_TYPE.Good}</span>
       )}
-      <span className="coverage">WH COVERAGE</span>
+      <span className="wh-coverage__span">WH COVERAGE</span>
     </>
   );
 };
