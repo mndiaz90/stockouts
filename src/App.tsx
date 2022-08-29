@@ -1,16 +1,19 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import ProductsList from "./components/ProductsList";
 import products from "./data/products.json";
 import sortProductsByCoverageAndRanking from "./utils/sortProducts";
+import { Product } from "./utils/types";
 import "./App.css";
 
 function App() {
-  const [sortedProducts, setSortedProducts] = useState([]);
+  const [sortedProducts, setSortedProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const sortedProductsBy = sortProductsByCoverageAndRanking(products);
     setSortedProducts(sortedProductsBy);
   }, []);
+
   return (
     <div className="App">
       <header className="App-header">

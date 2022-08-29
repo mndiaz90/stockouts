@@ -1,3 +1,4 @@
+import React from "react";
 import ProgressBar from "../ProgressBar";
 import Separator from "../Separator";
 import "./styles.css";

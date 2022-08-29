@@ -1,4 +1,5 @@
-import BarChart from "../BarChart";
+import React from "react";
+import BarChart from "../BarChart/index";
 import StockoutLevel from "../StockoutLevel";
 import "./styles.css";
 
@@ -11,7 +12,7 @@ const ProductCard = ({
   size_stock,
   wh_coverage,
 }) => {
-  const onClickComplete = (code) => {
+  const onClickComplete = (code: number) => {
     if (
       window.confirm("Are you sure you want to mark this product as complete?")
     )
