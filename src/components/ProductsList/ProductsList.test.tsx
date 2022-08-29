@@ -1,3 +1,4 @@
+import React from "react";
 import { screen, render, fireEvent } from "@testing-library/react";
 import ProductsList from "./index";
 
@@ -34,9 +35,16 @@ const products = [
   },
 ];
 
+const setSortedProducts = jest.fn();
+
 describe("<ProductsList />", () => {
   it("should have two products card", () => {
-    render(<ProductsList sortedProducts={products} />);
+    render(
+      <ProductsList
+        sortedProducts={products}
+        setSortedProducts={setSortedProducts}
+      />
+    );
 
     const renderedProducts = screen.getAllByRole("listitem");
     expect(renderedProducts).toHaveLength(products.length);
@@ -44,7 +52,6 @@ describe("<ProductsList />", () => {
 
   it("should upadate the state when confirm", async () => {
     global.confirm = jest.fn(() => true);
-    const setSortedProducts = jest.fn();
 
     render(
       <ProductsList

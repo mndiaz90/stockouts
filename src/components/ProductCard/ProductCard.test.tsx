@@ -1,3 +1,4 @@
+import React from "react";
 import { screen, render, fireEvent } from "@testing-library/react";
 import ProductCard from "./index";
 
@@ -22,7 +23,9 @@ const product = {
 
 describe("<ProductCard />", () => {
   it("should display all data in the Card", () => {
-    render(<ProductCard {...product} removeProduct={removeProduct} />);
+    render(
+      <ProductCard {...product} removeProduct={removeProduct} count={1} />
+    );
 
     expect(screen.getByText(182295)).toBeInTheDocument();
     expect(screen.getByAltText("ACME PRODUCT 02509")).toBeInTheDocument();
@@ -40,9 +43,11 @@ describe("<ProductCard />", () => {
 
   describe("button Mark Complete", () => {
     it("should appear the confirmation message when click", () => {
-      render(<ProductCard {...product} removeProduct={removeProduct} />);
+      render(
+        <ProductCard {...product} removeProduct={removeProduct} count={1} />
+      );
 
-      fireEvent.click(screen.queryByRole("button"));
+      fireEvent.click(screen.queryByRole("button") as HTMLButtonElement);
 
       expect(global.confirm).toHaveBeenCalledWith(expect.any(String));
       expect(global.confirm).toHaveBeenCalledTimes(1);
@@ -51,18 +56,22 @@ describe("<ProductCard />", () => {
     it("should call remove function when accept confirmation message", () => {
       global.confirm = jest.fn(() => true);
 
-      render(<ProductCard {...product} removeProduct={removeProduct} />);
+      render(
+        <ProductCard {...product} removeProduct={removeProduct} count={1} />
+      );
 
-      fireEvent.click(screen.queryByRole("button"));
+      fireEvent.click(screen.queryByRole("button") as HTMLButtonElement);
 
       expect(removeProduct).toHaveBeenCalledTimes(1);
     });
 
     it("should not call remove function when denied confirmation message", () => {
       global.confirm = jest.fn(() => false);
-      render(<ProductCard {...product} removeProduct={removeProduct} />);
+      render(
+        <ProductCard {...product} removeProduct={removeProduct} count={1} />
+      );
 
-      fireEvent.click(screen.queryByRole("button"));
+      fireEvent.click(screen.queryByRole("button") as HTMLButtonElement);
 
       expect(removeProduct).toHaveBeenCalledTimes(0);
     });
